@@ -1,0 +1,90 @@
+#status
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s (time)
+  should: %s == Time.parse("1999-03-15")
+
+#updated_on
+  should: %s (time)
+  should: %s == Time.parse("2011-02-11")
+
+#expires_on
+  should: %s (time)
+  should: %s == Time.parse("2012-03-14")
+
+
+#registrar
+  should: %s (registrar)
+  should: %s.id           == nil
+  should: %s.name         == "Markmonitor.com"
+  should: %s.url          == "http://www.markmonitor.com"
+
+
+#registrant_contacts
+  should: %s (array)
+  should: %s have(1).items
+  should: %s[0] (contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == "DNS Admin"
+  should: %s[0].organization == "Google Inc."
+  should: %s[0].address      == "1600 Amphitheatre Parkway"
+  should: %s[0].city         == "Mountain View"
+  should: %s[0].zip          == "94043"
+  should: %s[0].state        == "CA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.6506234000"
+  should: %s[0].fax          == "+1.6506188571"
+  should: %s[0].email        == "dns-admin@google.com"
+
+#admin_contacts
+  should: %s (array)
+  should: %s have(1).items
+  should: %s[0] (contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_ADMIN
+  should: %s[0].name         == "DNS Admin"
+  should: %s[0].organization == "Google Inc."
+  should: %s[0].address      == "1600 Amphitheatre Parkway"
+  should: %s[0].city         == "Mountain View"
+  should: %s[0].zip          == "94043"
+  should: %s[0].state        == "CA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.6506234000"
+  should: %s[0].fax          == "+1.6506188571"
+  should: %s[0].email        == "dns-admin@google.com"
+
+#technical_contacts
+  should: %s (array)
+  should: %s have(1).items
+  should: %s[0] (contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_TECHNICAL
+  should: %s[0].name         == "DNS Admin"
+  should: %s[0].organization == "Google Inc."
+  should: %s[0].address      == "1600 Amphitheatre Parkway"
+  should: %s[0].city         == "Mountain View"
+  should: %s[0].zip          == "94043"
+  should: %s[0].state        == "CA"
+  should: %s[0].country_code == "US"
+  should: %s[0].phone        == "+1.6506234000"
+  should: %s[0].fax          == "+1.6506188571"
+  should: %s[0].email        == "dns-admin@google.com"
+
+
+#nameservers
+  should: %s (array)
+  should: %s have(4).items
+  should: %s[0] (nameserver)
+  should: %s[0] == _nameserver.new(:name => "ns2.google.com")
+  should: %s[1] (nameserver)
+  should: %s[1] == _nameserver.new(:name => "ns1.google.com")
+  should: %s[2] (nameserver)
+  should: %s[2] == _nameserver.new(:name => "ns4.google.com")
+  should: %s[3] (nameserver)
+  should: %s[3] == _nameserver.new(:name => "ns3.google.com")

@@ -1,0 +1,13 @@
+current directory: /home/packetloss0709/Desktop/iotGW/snorby/vendor/cache/ruby/2.5.0/gems/json-1.8.6/ext/json
+/home/packetloss0709/.rvm/rubies/ruby-2.5.1/bin/ruby -r ./siteconf20180809-5057-263h74.rb extconf.rb
+creating Makefile
+
+current directory: /home/packetloss0709/Desktop/iotGW/snorby/vendor/cache/ruby/2.5.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/packetloss0709/Desktop/iotGW/snorby/vendor/cache/ruby/2.5.0/gems/json-1.8.6/ext/json
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: /home/packetloss0709/Desktop/iotGW/snorby/vendor/cache/ruby/2.5.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" install

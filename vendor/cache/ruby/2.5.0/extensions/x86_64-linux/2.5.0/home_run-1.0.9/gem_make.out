@@ -1,0 +1,42 @@
+current directory: /home/packetloss0709/Desktop/iotGW/snorby/vendor/cache/ruby/2.5.0/gems/home_run-1.0.9/ext/date_ext
+/home/packetloss0709/.rvm/rubies/ruby-2.5.1/bin/ruby -r ./siteconf20180809-5057-1ja1m9d.rb extconf.rb
+creating Makefile
+
+current directory: /home/packetloss0709/Desktop/iotGW/snorby/vendor/cache/ruby/2.5.0/gems/home_run-1.0.9/ext/date_ext
+make "DESTDIR=" clean
+
+current directory: /home/packetloss0709/Desktop/iotGW/snorby/vendor/cache/ruby/2.5.0/gems/home_run-1.0.9/ext/date_ext
+make "DESTDIR="
+compiling date_ext.c
+date_ext.c: In function ‘rhrd__strftime’:
+date_ext.c:818:35: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘long long int’ [-Wformat=]
+           cp += sprintf(str + cp, "%03" PRId64, (d->nanos % RHR_NANOS_PER_SECOND)/1000000);
+                                   ^
+date_ext.c:827:35: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘long long int’ [-Wformat=]
+           cp += sprintf(str + cp, "%09" PRId64, (d->nanos % RHR_NANOS_PER_SECOND));
+                                   ^
+date_ext.c:839:35: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘long long int’ [-Wformat=]
+           cp += sprintf(str + cp, "%" PRId64, rhrd__jd_to_unix((long long)d->jd) * 1000 + d->nanos/RHR_NANOS_PER_MILLISECOND - d->offset * 60000);
+                                   ^
+date_ext.c:848:35: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘long long int’ [-Wformat=]
+           cp += sprintf(str + cp, "%" PRId64, rhrd__jd_to_unix((long long)d->jd) + d->nanos/RHR_NANOS_PER_SECOND - d->offset * 60);
+                                   ^
+date_ext.c: In function ‘rhrd__strptime’:
+date_ext.c:1165:33: warning: format ‘%ld’ expects argument of type ‘long int *’, but argument 3 has type ‘long long int *’ [-Wformat=]
+           if (sscanf(str + pos, "%" SCNd64 "%n", &milliseconds, &scan_len) != 1) {
+                                 ^
+date_ext.c:1171:33: warning: format ‘%ld’ expects argument of type ‘long int *’, but argument 3 has type ‘long long int *’ [-Wformat=]
+           if (sscanf(str + pos, "%" SCNd64 "%n", &seconds, &scan_len) != 1) {
+                                 ^
+date_ext.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-tautological-compare’
+compiling date_parser.c
+compiling datetime.c
+linking shared-object date_ext.so
+
+current directory: /home/packetloss0709/Desktop/iotGW/snorby/vendor/cache/ruby/2.5.0/gems/home_run-1.0.9/ext/date_ext
+make "DESTDIR=" install
+/usr/bin/install -m 0755 date_ext.so ./.gem.20180809-5057-1dz5e26

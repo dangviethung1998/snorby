@@ -1,0 +1,152 @@
+current directory: /home/packetloss0709/Desktop/iotGW/snorby/vendor/cache/ruby/2.5.0/gems/do_mysql-0.10.17/ext/do_mysql
+/home/packetloss0709/.rvm/rubies/ruby-2.5.1/bin/ruby -r ./siteconf20180809-5057-1wze2ys.rb extconf.rb
+checking for -lmysqlclient... yes
+checking for -lpthread... yes
+checking for -lz... yes
+checking for -lm... yes
+checking for -lrt... yes
+checking for -ldl... yes
+checking for localtime_r()... yes
+checking for gmtime_r()... yes
+checking for mysql.h... yes
+checking for MYSQL_TYPE_STRING in mysql.h... yes
+checking for MYSQL_TYPE_BIT in mysql.h... yes
+checking for MYSQL_TYPE_NEWDECIMAL in mysql.h... yes
+checking for mysql_query() in mysql.h... yes
+checking for mysql_ssl_set() in mysql.h... yes
+checking for mysql_sqlstate() in mysql.h... yes
+checking for mysql_get_ssl_cipher() in mysql.h... yes
+checking for mysql_set_character_set() in mysql.h... yes
+checking for mysql_get_server_version() in mysql.h... yes
+checking for mysql_real_escape_string_quote() in mysql.h... yes
+checking for MYSQL_FIELD.charsetnr in mysql.h... yes
+checking for rb_thread_fd_select()... yes
+creating Makefile
+
+current directory: /home/packetloss0709/Desktop/iotGW/snorby/vendor/cache/ruby/2.5.0/gems/do_mysql-0.10.17/ext/do_mysql
+make "DESTDIR=" clean
+
+current directory: /home/packetloss0709/Desktop/iotGW/snorby/vendor/cache/ruby/2.5.0/gems/do_mysql-0.10.17/ext/do_mysql
+make "DESTDIR="
+compiling do_common.c
+do_common.c: In function ‘data_objects_raise_error’:
+do_common.c:69:6: warning: function might be candidate for attribute ‘noreturn’ [-Wsuggest-attribute=noreturn]
+ void data_objects_raise_error(VALUE self, const struct errcodes *errors, int errnum, VALUE message, VALUE query, VALUE state) {
+      ^
+do_common.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-tautological-compare’
+compiling do_mysql.c
+do_mysql.c: In function ‘do_mysql_cCommand_execute_async’:
+do_mysql.c:161:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   struct timeval start;
+   ^
+do_mysql.c:170:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   int socket_fd = db->net.fd;
+   ^
+do_mysql.c:198:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   MYSQL_RES *result = mysql_store_result(db);
+   ^
+do_mysql.c: In function ‘do_mysql_full_connect’:
+do_mysql.c:216:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE r_user = rb_iv_get(self, "@user");
+   ^
+do_mysql.c:223:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE r_password = rb_iv_get(self, "@password");
+   ^
+do_mysql.c:230:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE r_port = rb_iv_get(self, "@port");
+   ^
+do_mysql.c:237:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE r_path = rb_iv_get(self, "@path");
+   ^
+do_mysql.c:250:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE r_query = rb_iv_get(self, "@query");
+   ^
+do_mysql.c:263:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   char *ssl_client_key, *ssl_client_cert, *ssl_ca_cert, *ssl_ca_path, *ssl_cipher;
+   ^
+do_mysql.c:288:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   unsigned long client_flags = 0;
+   ^
+do_mysql.c:306:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   const char *ssl_cipher_used = mysql_get_ssl_cipher(db);
+   ^
+do_mysql.c:326:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE encoding = rb_iv_get(self, "@encoding");
+   ^
+do_mysql.c: In function ‘do_mysql_cConnection_initialize’:
+do_mysql.c:380:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE r_host = rb_funcall(uri, rb_intern("host"), 0);
+   ^
+do_mysql.c:386:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE r_user = rb_funcall(uri, rb_intern("user"), 0);
+   ^
+do_mysql.c:392:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE r_password = rb_funcall(uri, rb_intern("password"), 0);
+   ^
+do_mysql.c:398:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE r_path = rb_funcall(uri, rb_intern("path"), 0);
+   ^
+do_mysql.c:404:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE r_port = rb_funcall(uri, rb_intern("port"), 0);
+   ^
+do_mysql.c:411:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE r_query = rb_funcall(uri, rb_intern("query"), 0);
+   ^
+do_mysql.c:415:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   const char *encoding = data_objects_get_uri_option(r_query, "encoding");
+   ^
+do_mysql.c:425:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   MYSQL *db = mysql_init(NULL);
+   ^
+do_mysql.c: In function ‘do_mysql_cConnection_quote_string’:
+do_mysql.c:467:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   char *escaped = calloc(buffer_len, sizeof(char));
+   ^
+do_mysql.c:473:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   unsigned long quoted_length;
+   ^
+do_mysql.c: In function ‘do_mysql_cCommand_execute_non_query’:
+do_mysql.c:508:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   MYSQL *db = DATA_PTR(mysql_connection);
+   ^
+do_mysql.c: In function ‘do_mysql_cCommand_execute_reader’:
+do_mysql.c:532:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE query = data_objects_build_query_from_args(self, argc, argv);
+   ^
+do_mysql.c:544:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE field_names = rb_ary_new();
+   ^
+do_mysql.c:560:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   MYSQL_FIELD *field;
+   ^
+do_mysql.c: In function ‘do_mysql_cReader_close’:
+do_mysql.c:592:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   MYSQL_RES *reader = DATA_PTR(reader_container);
+   ^
+do_mysql.c: In function ‘do_mysql_cReader_next’:
+do_mysql.c:614:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   MYSQL_RES *reader = DATA_PTR(reader_container);
+   ^
+do_mysql.c:618:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   MYSQL_ROW result = mysql_fetch_row(reader);
+   ^
+do_mysql.c:631:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   int enc = -1;
+   ^
+do_mysql.c:640:3: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+   VALUE field_type;
+   ^
+do_mysql.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-tautological-compare’
+linking shared-object do_mysql/do_mysql.so
+
+current directory: /home/packetloss0709/Desktop/iotGW/snorby/vendor/cache/ruby/2.5.0/gems/do_mysql-0.10.17/ext/do_mysql
+make "DESTDIR=" install
+/usr/bin/install -m 0755 do_mysql.so ./.gem.20180809-5057-24k5sn/do_mysql

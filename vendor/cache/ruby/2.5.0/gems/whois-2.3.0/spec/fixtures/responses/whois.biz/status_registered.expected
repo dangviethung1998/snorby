@@ -1,0 +1,69 @@
+#domain
+  should: %s == "google.biz"
+
+#domain_id
+  should: %s == "D2835288-BIZ"
+
+
+#referral_whois
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+#referral_url
+  should: %s raise_error(Whois::PropertyNotSupported)
+
+
+#status
+  should: %s == %w( clientDeleteProhibited clientTransferProhibited clientUpdateProhibited )
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s (time)
+  should: %s == Time.parse("2002-03-27 00:01:00 UTC")
+
+#updated_on
+  should: %s (time)
+  should: %s == Time.parse("2009-03-01 12:01:04 UTC")
+
+#expires_on
+  should: %s (time)
+  should: %s == Time.parse("2010-03-26 23:59:59 UTC")
+
+
+#registrar
+  should: %s (registrar)
+  should: %s.id           == "292"
+  should: %s.name         == "MARKMONITOR, INC."
+
+#registrant_contacts
+  should: %s (array)
+  should: %s have(1).items
+  should: %s[0] (contact)
+
+#admin_contacts
+  should: %s (array)
+  should: %s have(1).items
+  should: %s[0] (contact)
+
+#technical_contacts
+  should: %s (array)
+  should: %s have(1).items
+  should: %s[0] (contact)
+
+
+#nameservers
+  should: %s (array)
+  should: %s have(4).items
+  should: %s[0] (nameserver)
+  should: %s[0] == _nameserver.new(:name => "ns1.google.com")
+  should: %s[1] (nameserver)
+  should: %s[1] == _nameserver.new(:name => "ns2.google.com")
+  should: %s[2] (nameserver)
+  should: %s[2] == _nameserver.new(:name => "ns3.google.com")
+  should: %s[3] (nameserver)
+  should: %s[3] == _nameserver.new(:name => "ns4.google.com")

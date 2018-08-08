@@ -44,7 +44,7 @@ gem 'dm-aggregates',               DM_VERSION
 gem 'dm-timestamps',               DM_VERSION
 gem 'dm-observer',                 DM_VERSION
 gem 'dm-serializer',               DM_VERSION
-gem 'dm-is-read_only',             '~> 0.3', :git => 'https://github.com/postmodern/dm-is-read_only.git' 
+gem 'dm-is-read_only',             '~> 0.3', :git => 'https://github.com/postmodern/dm-is-read_only.git'
 gem 'dm-chunked_query',            '~> 0.3'
 
 # Deploy with Capistrano
@@ -63,13 +63,13 @@ gem 'chronic',                     '~> 0.3.0'
 gem 'pdfkit',                      '~> 0.4.6'
 gem 'ezprint',                     :git => 'https://github.com/mephux/ezprint.git', :branch => 'rails3', :require => 'ezprint'
 gem 'daemons',                     '~> 1.1.0'
-
-gem 'delayed_job',                 '~> 2.1.4'
-gem 'delayed_job_data_mapper',     '~> 1.0.0.rc', :git => 'https://github.com/Snorby/delayed_job_data_mapper.git'
+gem 'delayed_job_active_record'
+gem 'delayed_job',                 '~> 4.1.5'
+#gem 'delayed_job_data_mapper',     '~> 1.0.0.rc', :git => 'https://github.com/Snorby/delayed_job_data_mapper.git'
 
 # Working On This
 # gem 'delayed_job',                 '~> 3.0'
-# gem 'delayed_job_data_mapper',     '~> 1.0.0.rc', :git => 'https://github.com/collectiveidea/delayed_job_data_mapper.git'
+gem 'delayed_job_data_mapper',     '~> 1.0.0.rc', :git => 'https://github.com/collectiveidea/delayed_job_data_mapper.git'
 
 # Old - Remove Avatar Support
 # gem 'rmagick',                     '~> 2.13.1'
@@ -91,7 +91,7 @@ end
 
 group(:test) do
   gem 'capybara'
-  gem 'test-unit'	
+  gem 'test-unit'
   gem 'rspec',                	  RSPEC_VERSION
   gem 'rspec-core',               RSPEC_VERSION, :require => 'rspec/core'
   gem 'rspec-expectations',       RSPEC_VERSION, :require => 'rspec/expectations'

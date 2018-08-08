@@ -1,0 +1,126 @@
+= dm-devise
+
+dm-devise lets you use devise (http://github.com/plataformatec/devise) with
+DataMapper.
+
+dm-devise is intended for use with Rails 3 and devise >= 1.1. It may work with
+earlier versions, but it's not been tested (if you try, please let Jared Morgan
+(http://github.com/jm81) know how it goes.)
+
+This README only covers dm-devise specifics. Make sure to read the devise
+README http://github.com/plataformatec/devise/blob/master/README.rdoc
+
+Last tested against devise master: 2011-09-09, commit ea7f15917f70b82d1ddc9559db968894f2c82cad
+Last tested against devise release 1.4.5
+
+== Installation
+
+Add dm-devise and dm gems to your Gemfile. The following gems are required:
+
+  gem 'dm-core',           '~> 1.1.0'
+  gem 'dm-sqlite-adapter', '~> 1.1.0' # or your preferred adapter
+  gem 'dm-serializer',     '~> 1.1.0'
+  gem 'dm-timestamps',     '~> 1.1.0'
+  gem 'dm-rails',          '~> 1.1.0'
+  gem 'dm-validations',    '~> 1.1.0' # Do not include if using data_mapper_active_model
+  gem 'dm-devise',         '~> 1.5.0'
+
+If you're using Active Model validations, do not include dm-validations in your
+Gemfile.
+
+dm-devise works with versions of DataMapper gems >= 1.0.2 on the 1.0 branch
+and >= 1.1.0.rc3 on the 1.1 branch.
+
+Run the generator:
+
+  rails generate data_mapper:devise_install
+
+The generator will install an initializer which describes ALL Devise's
+configuration options and you MUST take a look at it. See Config section below
+for three config options that have particular importance to dm-devise.
+
+Add Devise to any of your models using the generator:
+
+  rails generate data_mapper:devise MODEL
+
+Read the README for devise at http://github.com/plataformatec/devise/blob/master/README.rdoc
+
+== Config Options
+
+See the generated initializer for all the config options, but dm-devise users
+should be particularly aware of these three:
+
+=== data_mapper_validation_lib
+
+dm-devise adds some compatibility methods for either dm-validations or
+Active Model validations. By default, it determines what to load based on
+which library is found (giving preference to dm-validations). You may
+explicitly set this to 'dm-validations' or 'active_model', or false to not
+load any of the validations compatibility code. Details of the options:
+
+dm-validations::
+  Uses dm-validations. This involves a bit of monkey-patching, but you need to
+  use this if you want auto-validations in *any* of your models.
+active_model::
+  Uses ActiveModel::Validations. Do not use if you require 'dm-validations'
+  anywhere in your app (or include it in your Gemfile). Things will break.
+  The advantage to this is Active Model's I18n support for error messages, and
+  it uses the same validations lib as devise does by default.
+
+=== apply_schema
+
+Tells if dm-devise should apply the devise database schema. You may want to
+set this to false if working with a legacy schema.
+
+=== data_mapper_validation_messages
+
+Messages to use as the default DataMapper validation error messages. The
+messages are updated from those included in dm-validations to be consistent
+with ActiveModel (i.e. with the Devise test expectations) and include
+additional messages that devise uses (:not_found, :already_confirmed,
+:not_locked, and :expired). If set to false, the messages are left as
+defined by the dm-validations gem.
+
+== TODO
+
+* Example app
+* Rails templates
+
+== Testing
+
+The dm-devise test rake task runs all of devise's tests using the data_mapper
+ORM with both dm-validations and active_model validations (you can specify one
+with rake test VALIDATION_LIB=lib_name). In order to run tests, you'll need a
+local copy of devise (a gem is fine as long as you specify the path). By default,
+dm-devise looks for devise in [path-to-dm-devise]/../devise. You can override
+this by setting a DEVISE_PATH env variable. For example:
+
+  rake test DEVISE_PATH=/path/to/devise
+
+== Note on Patches/Pull Requests
+
+* Fork the project.
+* Make your feature addition or bug fix.
+* Add tests for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
+* Send me a pull request. Bonus points for topic branches.
+
+== Maintainers
+
+* Jared Morgan (http://github.com/jm81)
+
+== Contributors
+
+http://github.com/jm81/dm-devise/contributors
+
+== Bugs and Feedback
+
+For dm-devise specific issues, please create an issue on GitHub at:
+
+http://github.com/jm81/dm-devise/issues
+
+== Copyright
+
+Copyright (c) 2010-2011 Jared Morgan. See LICENSE for details.

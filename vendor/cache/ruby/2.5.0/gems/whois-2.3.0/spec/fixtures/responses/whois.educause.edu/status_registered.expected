@@ -1,0 +1,46 @@
+#status
+  should: %s == :registered
+
+#available?
+  should: %s == false
+
+#registered?
+  should: %s == true
+
+
+#created_on
+  should: %s (time)
+  should: %s == Time.parse("1998-03-11")
+
+#updated_on
+  should: %s (time)
+  should: %s == Time.parse("2009-10-02")
+
+#expires_on
+  should: %s (time)
+  should: %s == Time.parse("2010-07-31")
+
+
+#registrant_contacts
+  should: %s (array)
+  should: %s have(1).items
+  should: %s[0] (contact)
+  should: %s[0].type         == Whois::Record::Contact::TYPE_REGISTRANT
+  should: %s[0].name         == nil
+  should: %s[0].organization == "EDUCAUSE"
+  should: %s[0].address      == "4772 Walnut Street\nSuite 206"
+  should: %s[0].city         == "Boulder"
+  should: %s[0].zip          == "80301"
+  should: %s[0].state        == "CO"
+  should: %s[0].country      == "UNITED STATES"
+
+
+#nameservers
+  should: %s (array)
+  should: %s have(3).items
+  should: %s[0] (nameserver)
+  should: %s[0] == _nameserver.new(:name => "ns3.educause.edu", :ipv4 => "198.59.61.50")
+  should: %s[1] (nameserver)
+  should: %s[1] == _nameserver.new(:name => "ns4.educause.edu", :ipv4 => "192.52.179.69")
+  should: %s[2] (nameserver)
+  should: %s[2] == _nameserver.new(:name => "ns5.educause.edu", :ipv4 => "198.59.61.50")
