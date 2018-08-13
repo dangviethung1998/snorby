@@ -12,9 +12,9 @@ module LayoutHelper
     return content_for(placement.to_sym) { javascript_include_tag(*args) } if placement
     content_for(:header) { javascript_include_tag(*args) }
   end
-  
+
   def show_title(title)
-    content_for(:title) { "Snorby - #{title}" } if title
+    content_for(:title) { "#{title}" } if title
   end
-  
+
 end

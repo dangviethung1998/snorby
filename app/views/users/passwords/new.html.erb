@@ -1,7 +1,7 @@
 <%= title "Forgot your password?" -%>
 <div class="content-box">
   <div class="content-box-title">
-    Forgot Your Password?
+    Quên mật khẩu?
   </div>
   <div class="content-box-body">
     <div id='password'>
@@ -10,16 +10,15 @@
 
     <div class='login-note'>
       <i class="icon-question-sign"></i>
-      Please enter your email and snorby will send you a reset URL. You will
-      be prompted to submit a new password.
+      Nhập email của bạn và chúng tôi sẽ gửi email xác nhận
     </div>
 
     <p class='item'>
       <%= f.label :email %><br />
-      <%= f.text_field :email, :title => 'E-mail...', :placeholder => 'example@example.com', :autocomplete => :off, :class => 'required email' %>
+      <%= f.text_field :email, :title => 'E-mail...', :placeholder => 'email@email.com', :autocomplete => :off, :class => 'required email' %>
     </p>
-      <button class="login-button login-default">Send me reset password instructions</button>
-      <%= link_to 'Cancel', new_user_session_path, class: 'login-button', :"data-no-turbolink" => "true" %>
+      <button class="login-button login-default">Gửi email</button>
+      <%= link_to 'Quay lại', new_user_session_path, class: 'login-button', :"data-no-turbolink" => "true" %>
   <% end %>
 
   </div>

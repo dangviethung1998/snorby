@@ -2,11 +2,15 @@
 SnortSchema.create(:vseq => 107, :ctime => Time.now, :version => "Snorby #{Snorby::VERSION}") if SnortSchema.first.blank?
 
 # Default user setup
-User.create(:name => 'Administrator', :email => 'snorby@example.com', :password => 'snorby', :password_confirmation => 'snorby', :admin => true) if User.all.blank?
+User.create(:name => 'Administrator',
+  :email => 'admin@gmail.com',
+  :password => 'admin123',
+  :password_confirmation => 'admin123',
+  :admin => true) if User.all.blank?
 
 # Snorby General Settings
 Setting.set(:company, 'Snorby') unless Setting.company?
-Setting.set(:email, 'snorby@example.com') unless Setting.email?
+Setting.set(:email, 'admin@gmail.com') unless Setting.email?
 Setting.set(:signature_lookup, 'http://rootedyour.com/snortsid?sid=$$gid$$:$$sid$$') unless Setting.signature_lookup?
 Setting.set(:daily, 1) unless Setting.daily?
 Setting.set(:weekly, 1) unless Setting.weekly?

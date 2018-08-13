@@ -2,25 +2,26 @@
 	<div id="header-inside">
 		<div id="header-content">
 			<div id="header-top" class='container_12'>
-				
+
 				<div id="logo" class='grid_6'>
+          <img src="/images/header/logo.png" height="60px" width="150">
 					<%= link_to "Snorby", root_path %>
-          <%= link_to "TS", "https://www.threatstack.com", :target => "_BLANK", :class => "threat-stack" %>
+          <%#= link_to "TS", "https://www.threatstack.com", :target => "_BLANK", :class => "threat-stack" %>
 				</div>
-				
+
 				<div id="user-menu" class=''>
-					
+
 					<ul>
 						<% if user_signed_in? %>
 
-							<li class='first'>Welcome <%= current_user.name %></li>
-							<li><%= link_to 'Settings', edit_user_registration_path %></li>
-							<li class='last'><%= link_to 'Log out', destroy_user_session_path %></li>
-							
+							<li class='first'>Xin chào <%= current_user.name %></li>
+							<li><%= link_to 'Cài đặt', edit_user_registration_path %></li>
+							<li class='last'><%= link_to 'Đăng xuất', destroy_user_session_path %></li>
+
             <% else %>
 
-							<li class='first'><%= link_to 'Log In', login_path %></li>
-              <li class='last'><%= link_to 'Forgot Password?', new_password_path(resource_name) %></li>	
+							<li class='first'><%= link_to t'Đăng nhập', login_path %></li>
+              <li class='last'><%= link_to t'Quên mật khẩu?', new_password_path(resource_name) %></li>
 
             <% end %>
 
@@ -29,30 +30,30 @@
             <% end %>
 
 					</ul>
-					
+
 				</div>
-				
+
 			</div>
 		</div>
-		
+
 		<div id="menu">
 
 			<ul class='container_12'>
 
 				<% if user_signed_in? %>
 					<li class='item blank first'></li>
-					<li class='item'><%= link_to "Dashboard", dashboard_path %></li>
-					<li class='item'><%= link_to "My Queue (<span class='queue-count'>#{current_user.favorites_count}</span>)".html_safe, queue_events_path %></liü>
-            <li class='item'><%= link_to "Events", sessions_events_path %></li>
-					<li class='item'><%= link_to "Sensors", sensors_path %></li>
-					<li class='item'><%= link_to "Search", search_path %></li>
+					<li class='item'><%= link_to "Bảng tin", dashboard_path %></li>
+					<li class='item'><%= link_to "Tiến trình (<span class='queue-count'>#{current_user.favorites_count}</span>)".html_safe, queue_events_path %></li>
+            <li class='item'><%= link_to "Sự kiện", sessions_events_path %></li>
+					<li class='item'><%= link_to "Cảm biến", sensors_path %></li>
+					<li class='item'><%= link_to "Tìm kiếm", search_path %></li>
 					<li class='item blank last'></li>
 
 					<% if current_user.admin %>
             <li class='administration right'><%= link_to "Administration", settings_path %></li>
 
             <dl id="admin-menu" style='display:none;'>
-              
+
               <dd>
                 <%= link_to "General Settings", settings_path %>
               </dd>
@@ -64,7 +65,7 @@
               </dd>
 
               <dd>
-                <%= link_to "Sensors", sensors_path %>
+                <%= link_to "Cảm biến", sensors_path %>
               </dd>
 
               <dd>
@@ -90,23 +91,23 @@
               <dd>
                 <%= link_to "Worker & Job Queue <span class='shortcut'>ctrl+3</span>".html_safe, jobs_path %>
               </dd>
-            
+
             </dl>
 
 					<% end %>
-					
+
 					<% unless Snorby::Worker.running? %>
             <li class='menu-error right <%= current_user.admin ? 'admin' : '' %>'>
               <%= image_tag('icons/note-icon-white.png') %>
-              The Snorby worker is not currently running.
+              Hiện tại không có tiến trình nào đang chạy.
             </li>
 					<% end %>
-					
+
 				<% end %>
-				
+
 			</ul>
 
 		</div>
-		
+
 	</div>
 </div>

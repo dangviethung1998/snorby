@@ -677,6 +677,7 @@ body.login #flash_message.success{
 	position: relative;
 	overflow: visible;
 	border-bottom: 1px solid #000;
+	background: white;
 }
 
 #header #header-inside #header-content #header-top{
@@ -688,8 +689,9 @@ body.login #flash_message.success{
 
 #header #header-inside #header-content #header-top #logo{
 	height: 60px;
+	width: 50px;
 	text-align: right;
-	background: url(../images/header/logo.png) no-repeat;
+
 	text-indent: -99999em;
 	position: absolute;
 	display: block;
@@ -720,8 +722,7 @@ body.login #flash_message.success{
 }
 
 strong.current-snorby-env{
-	color: #fefad4;
-	text-shadow: #000 0 1px 0;
+	color: black;
 }
 
 #header #header-inside #header-content #header-top #user-menu{
@@ -739,7 +740,7 @@ strong.current-snorby-env{
 }
 
 #header #header-inside #header-content #header-top #user-menu ul li{
-	color: #d7d7d7;
+	color: black;
 	float: left;
 	padding-right: 5px;
 	padding-left: 5px;
@@ -754,16 +755,16 @@ strong.current-snorby-env{
 }
 
 #header #header-inside #header-content #header-top #user-menu ul li a{
-	color: #909090;
+	color: black;
 	float: left;
 }
 #header #header-inside #header-content #header-top #user-menu ul li a:hover{
-	color: #fff;
+	color: blue;
 }
 
 #header #header-inside #menu{
 	border-top: 1px solid #5a5a5a;
-	background: #41464a url(../images/header/menu-bg.png) repeat-x;
+	background: #42b6dd repeat-x;
 	display: block;
 	position: relative;
 	overflow: visible;
@@ -796,7 +797,7 @@ strong.current-snorby-env{
 
 #header #header-inside #menu ul li.menu-error.admin{
 	border-style: none;
-	color: #e3e7e7;
+	color: brown;
 	margin-right: 135px;
 }
 
@@ -949,7 +950,7 @@ dl#admin-menu dd a{
 }
 
 #header #header-inside #menu ul li:hover{
-	background: transparent url(../images/header/menu-bg.png) repeat-x 0 bottom;
+	background: #70a3dd repeat-x 0 bottom;
 }
 
 #header #header-inside #menu ul li.blank{
@@ -968,7 +969,7 @@ dl#admin-menu dd a{
 }
 
 #header #header-inside #menu ul li a{
-	color: #c8c7c9;
+	color: black;
 	font-weight: normal;
 	text-decoration: none;
 	font-variant: normal;
@@ -982,7 +983,7 @@ dl#admin-menu dd a{
 }
 
 #header #header-inside #menu ul li a:hover{
-	color: #fffeff;
+	color: black;
 }
 
 /* @end */
@@ -1065,19 +1066,13 @@ div.content-box-title {
 	line-height: 45px;
 	display: block;
 	position: relative;
-	background: #323339;
-	background: -moz-linear-gradient(top,#323339 0,#242529 100%);
-	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#323339),color-stop(100%,#28292E));
-	background: -webkit-linear-gradient(top,#323339 0,#242529 100%);
-	background: -o-linear-gradient(top,#323339 0,#242529 100%);
-	background: -ms-linear-gradient(top,#323339 0,#242529 1040%);
-	background: linear-gradient(top,#323339 0,#242529 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#323339',endColorstr='#242529',GradientType=0);
+	background: #86c5da;
+
+
 	-webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 1),0px 2px 0 rgba(255, 255, 255, 0.10),inset 0 1px 0 rgba(255, 255, 255, 0.12);
 	-o-box-shadow: 0 0 0 1px rgba(0,0,0,1),0px 2px 0 rgba(255,255,255,0.10),inset 0 1px 0 rgba(255,255,255,0.12);
 	-ms-box-shadow: 0 0 0 1px rgba(0,0,0,1),0px 2px 0 rgba(255,255,255,0.10),inset 0 1px 0 rgba(255,255,255,0.12);
 	-moz-box-shadow: 0 0 0 1px rgba(0,0,0,1),0px 2px 0 rgba(255,255,255,0.10),inset 0 1px 0 rgba(255,255,255,0.12);
-	box-shadow: 0 0 0 1px rgba(0,0,0,1),0px 2px 0 rgba(255,255,255,0.10),inset 0 1px 0 rgba(255,255,255,0.12);
 	overflow: hidden;
 	padding: 5px 15px;
 	font-size: 20px;
@@ -1094,14 +1089,16 @@ div.content-box {
 	background-color: rgba(81, 82, 84, 0.5);
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
-	border-radius: 3px;
-	color: #E8E7E9;
-	text-shadow: black 0 -1px 0;
+	border-radius: 4px;
+	color: black;
 	font-size: 16px;
 }
 
 div.content-box-body {
 	padding: 15px;
+	background-color: white;
+	border-color: black;
+	text-decoration-color: black;
 }
 
 /* @end */
@@ -1429,7 +1426,7 @@ div.pad-left{
 }
 
 form.validate{
-
+background-color: white;
 }
 
 #form-holder{
@@ -1442,6 +1439,7 @@ form.validate textarea{
 	height: 140px;
 	width: 600px;
 	padding: 5px;
+	background-color: white;
 }
 
 #snorbybox-holder{
@@ -1466,9 +1464,9 @@ h3{
 	text-align: left;
 }
 
-.blur {color: #bdbdbd}
+.blur {color: white}
 
-.blank {color: #e5e5e5}
+.blank {color: white}
 
 .no-overflow{
 	overflow: hidden;
@@ -1991,7 +1989,7 @@ ul.table div.content li .row .signature{
 	display: block;
 	width: 400px;
 	position: relative;
-	
+
 	white-space:nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -1999,7 +1997,7 @@ ul.table div.content li .row .signature{
 
 ul.table div.content li .row.sessions .signature{
 	width: 350px;
-	
+
 	white-space:nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -2276,7 +2274,7 @@ ul.table div.content div.event-data table{
 }
 
 ul.table div.content div.event-data table th{
-	background: #5f6264 !important;
+	#background: #5f6264 !important;
 	color: #fffeff;
 	text-shadow: #000 0 0 0;
 	border-bottom: 1px solid #e3e3e3;
@@ -3103,7 +3101,6 @@ ul.table li div.small span.severity{
 	background: #f00;
 }
 .colorpicker input {
-	background-color: transparent;
 	border: 1px solid transparent;
 	position: absolute;
 	color: #898989;
@@ -4635,9 +4632,9 @@ form#new_classification textarea{
 /* @group Login */
 
 html.login,body.login {
-  	font-family: Helvetica, Arial;
+  	font-family:  Arial;
   	font-size: 12px;
-	background: #202325 url('../images/login-bg.png') repeat;
+	background: white repeat;
 }
 
 #login {
@@ -4646,7 +4643,7 @@ html.login,body.login {
 	left:50%;
 	top:50%;
 	margin:-250px 0 0 -250px;
-	color: #7F7F80;
+	color: black;
 }
 
 #login #title-header {
@@ -4671,7 +4668,7 @@ html.login,body.login {
 #login .login-button.login-default:focus,
 #login .login-button.login-default:active {
   border: 1px solid #071637;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -4689,12 +4686,15 @@ html.login,body.login {
 #login div.login-note {
 	font-size: 12px;
 	margin: 5px 0;
-	background: #666;
+	background: white;
 	padding: 5px;
 	position: relative;
 	text-shadow: none;
 	border: 1px solid #666;
 	box-shadow: inset 0 0 1px black;
+	border-color: red;
+	border-radius: 6px;
+	border-width: 2px;
 }
 
 #login div.login-note.login-note-with-icon {
@@ -4780,7 +4780,7 @@ html.login,body.login {
 	padding: 12px;
 	font-size: 20px;
 	overflow: visible;
-	background: #282829;
+	background: white;
 	border: 1px solid #575758;
 	-webkit-box-shadow: inset 0 1px 10px rgba(0, 0, 0, 0.2);
 	-moz-box-shadow: inset 0 1px 10px rgba(0,0,0,0.2);
@@ -4788,7 +4788,7 @@ html.login,body.login {
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
-	color: white;
+	color: black;
 	padding-right: 25px;
 	margin-bottom: 15px;
 }
@@ -4796,7 +4796,7 @@ html.login,body.login {
 #login ::-webkit-input-placeholder {
 	 position: relative;
 	 top: 2px;
-   color: #999;
+   color: red;
 }
 
 #login :-moz-placeholder {
@@ -4821,7 +4821,7 @@ html.login,body.login {
 
 #login form label {
 	line-height: 20px;
-	color: #C7C6C8;
+	color: black;
 	width: 300px;
 	font-size: 14px;
 }
@@ -4836,10 +4836,12 @@ html.login,body.login {
 	position: absolute;
 	bottom: 25px;
 	right: 18px;
+	text-decoration-color: blue;
 }
 
 #login div.login-form-body {
  /* ... */
+ text-decoration-color: black;
 }
 
 #login div.login-form-actions {
@@ -4889,7 +4891,7 @@ html.login,body.login {
 #login #wrapper #content #signin,
 #login #wrapper #content #password{
 	width: 555px;
-	background-color: #fff;
+	background-color: #C1E1EC;
 	margin: 0;
 	padding: 0;
 }
@@ -4911,9 +4913,12 @@ html.login,body.login {
 	cursor: default;
 }
 
+
 #password #user_email, #new-password #user_password,
 #new-password #user_password_confirmation {
 	display: block;
+	background-color: white;
+	text-decoration-color: black;
 }
 
 #login #wrapper #content #password .field_with_errors input{
@@ -4922,6 +4927,7 @@ html.login,body.login {
 	position: relative;
 	display: block;
 	overflow: visible;
+	border-radius: 2px;
 	border: 2px solid #ff4442;
 }
 

@@ -1,6 +1,6 @@
 <% if current_user.admin %>
-	
-	<%= title "Listing Sensors" do -%>
+
+	<%= title "Cảm biến" do -%>
 
 		<% if current_user.admin %>
 			<%= render :partial => 'settings/menu' %>
@@ -10,14 +10,14 @@
 
 <% else %>
 
-	<%= title "Listing Sensors" -%>
+	<%= title "Cảm biến" -%>
 
 <% end %>
 
 <div id="sensors" class='boxit'>
-	
+
 	<table class='default' border="0" cellspacing="0" cellpadding="0">
-		<tr>		
+		<tr>
 			<th>ID</th>
 			<th>Name</th>
 			<th>Hostname</th>
@@ -34,5 +34,5 @@
 
 
 	<%= pager(@sensors, request.fullpath) %>
-	
+
 </div>
